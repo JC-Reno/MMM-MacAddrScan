@@ -1,13 +1,13 @@
-.MMM-MacAddressScan .deviceCell {
+.MMM-MacAddrScan .deviceCell {
   text-align: left;
 }
 
-.MMM-MacAddressScan .deviceCell i {
+.MMM-MacAddrScan .deviceCell i {
   padding-left: 0;
   padding-right: 10px;
 }
 
-.MMM-MacAddressScan .dateCell {
+.MMM-MacAddrScan .dateCell {
   padding-left: 30px;
   text-align: right;
 }

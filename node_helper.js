@@ -1,7 +1,7 @@
 /* global require, module */
 /* jshint esversion: 6 */
 /* Magic Mirror
- * Node Helper: MMM-MacAddressScan
+ * Node Helper: MMM-MacAddrScan
  *
  * Based on MMM-NetworkScanner by Ian Perrin http://ianperrin.com
  * Forked, modified, and extended by Ronald Record <ronaldrecord@gmail.com>
@@ -13,7 +13,7 @@ const ping = require("ping");
 const sudo = require("sudo");
 
 module.exports = NodeHelper.create({
-    
+
     start: function function_name () {
         this.log("Starting module: " + this.name);
     },
@@ -72,7 +72,7 @@ module.exports = NodeHelper.create({
                 var rows = buffer.split('\n');
                 for (var i = 2; i < rows.length; i++) {
                     var cells = rows[i].split('\t').filter(String);
-    
+
                     // Update device status
                     if (cells && cells[1]) {
                         var macAddress = cells[1].toUpperCase();
@@ -90,8 +90,8 @@ module.exports = NodeHelper.create({
                     }
                 }
             }
-            self.log(self.name + " arp scan addresses: ", discoveredMacAddresses); 
-            self.log(self.name + " arp scan devices: ", discoveredDevices); 
+            self.log(self.name + " arp scan addresses: ", discoveredMacAddresses);
+            self.log(self.name + " arp scan devices: ", discoveredDevices);
             self.sendSocketNotification("MAC_ADDRESSES", discoveredDevices);
             return;
         });
@@ -102,7 +102,7 @@ module.exports = NodeHelper.create({
         if (!this.config.devices) {
             return;
         }
-        
+
         this.log(this.name + " is performing ip address scan");
 
         var discoveredDevices = [];

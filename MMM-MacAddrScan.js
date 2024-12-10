@@ -1,13 +1,13 @@
 /* global Log, Module, moment, config */
 /* Magic Mirror
- * Module: MMM-MacAddressScan
+ * Module: MMM-MacAddrScan
  *
  * Based on MMM-NetworkScanner by Ian Perrin http://ianperrin.com
  * Forked, modified, and extended by Ronald Record <ronaldrecord@gmail.com>
  * MIT Licensed.
  */
 
-Module.register("MMM-MacAddressScan", {
+Module.register("MMM-MacAddrScan", {
 
     // Default module config.
     defaults: {
@@ -171,7 +171,7 @@ Module.register("MMM-MacAddressScan", {
 
     // Subclass getStyles method.
     getStyles: function() {
-        return ['MMM-MacAddressScan.css', 'font-awesome.css']
+        return ['MMM-MacAddrScan.css', 'font-awesome.css']
     },
 
     // Subclass getScripts method.

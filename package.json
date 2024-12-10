@@ -1,14 +1,14 @@
 {
-  "name": "MMM-MacAddressScan",
+  "name": "MMM-MacAddrScan",
   "version": "1.0.1",
   "description": "A module for MagicMirror which determines the status of devices on the network based on their MAC address",
-  "main": "MMM-MacAddressScan.js",
+  "main": "MMM-MacAddrScan.js",
   "scripts": {
     "test": "grunt test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/doctorfree/MMM-MacAddressScan.git"
+    "url": "git+https://gitlab.com/JC-Reno/MMM-MacAddrScan.git"
   },
   "keywords": [
     "MagicMirror",
@@ -18,9 +18,9 @@
   "author": "Ronald Record",
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/doctorfree/MMM-MacAddressScan/issues"
+    "url": "https://gitlab.com/JC-Reno/MMM-MacAddrScan/issues"
   },
-  "homepage": "https://gitlab.com/doctorfree/MMM-MacAddressScan#readme",
+  "homepage": "https://gitlab.com/JC-Reno/MMM-MacAddrScan#readme",
   "dependencies": {
     "sudo": "^1.0.3",
     "ping": "^0.1.10"

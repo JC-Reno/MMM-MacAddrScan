@@ -3,8 +3,8 @@ node_js:
   - "6"
 before_install:
   - cd ../../ && git clone https://github.com/MichMich/MagicMirror
-  - mv MMM-MacAddressScan MagicMirror/modules
+  - mv MMM-MacAddrScan MagicMirror/modules
   - cd MagicMirror && npm install express
-  - cd modules/MMM-MacAddressScan
+  - cd modules/MMM-MacAddrScan
 before_script:
   - npm install grunt-cli -g
