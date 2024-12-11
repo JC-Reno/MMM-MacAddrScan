@@ -11,6 +11,10 @@
 const NodeHelper = require("node_helper");
 const ping = require("ping");
 const sudo = require("sudo");
+const events = require('events');
+
+// Increase max listeners limit
+events.EventEmitter.defaultMaxListeners = 15;
 
 module.exports = NodeHelper.create({
 
