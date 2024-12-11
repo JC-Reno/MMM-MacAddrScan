@@ -21,8 +21,10 @@
   "homepage": "https://gitlab.com/JC-Reno/MMM-MacAddrScan#readme",
   "dependencies": {
     "sudo": "^1.0.3",
-    "ping": "^0.1.10",
-    "lru-cache": "^6.0.0"
+    "ping": "^0.4.4",
+    "lru-cache": "^10.0.1",
+    "glob": "^10.3.3",
+    "rimraf": "^5.0.1"
   },
   "devDependencies": {}
 }
