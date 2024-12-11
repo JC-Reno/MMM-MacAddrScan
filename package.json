@@ -3,9 +3,7 @@
   "version": "1.0.1",
   "description": "A module for MagicMirror which determines the status of devices on the network based on their MAC address",
   "main": "MMM-MacAddrScan.js",
-  "scripts": {
-    "test": "grunt test"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://gitlab.com/JC-Reno/MMM-MacAddrScan.git"
@@ -26,8 +24,6 @@
     "ping": "^0.1.10"
   },
   "devDependencies": {
-      "grunt": "latest",
-      "grunt-contrib-jshint": "latest",
-      "grunt-contrib-nodeunit": "latest"
+    "tap": "^16.3.10"
   }
 }
