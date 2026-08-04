@@ -19,6 +19,7 @@ module by Ian Perrin (http://ianperrin.com).
         1. [Keep alive example](#keep-alive-example)
         1. [Notification example](#notification-example)
     1. [CSS Styling](css-styling)
+1. [Port Requirements](#port-requirements)
 1. [TelegramBot integration](#telegrambot-integration)
     1. [TelegramBot installation](#telegrambot-installation)
     1. [Telegram usage](#telegram-usage)
@@ -335,6 +336,51 @@ and module header, add the following to your custom.css file:
 .MMM-MacAddrScan .headerDevCell {
   font-size: 28px;
 }
+```
+
+## Port Requirements
+
+### UFW Firewall Rules
+
+This module uses two network scanning methods, each with different firewall considerations:
+
+#### ARP Scanning (`arp-scan`)
+
+The primary scan method uses ARP (Address Resolution Protocol), which operates at **Layer 2** of the OSI model. Because UFW (Uncomplicated Firewall) operates at Layer 3/4 (IP/TCP/UDP), **UFW does not affect ARP packets**. No UFW rules are required for `arp-scan` to function correctly.
+
+#### ICMP Ping Scanning
+
+The secondary scan method uses ICMP echo requests (ping) to check devices by IP address or hostname. By default, UFW allows outgoing connections from the MagicMirror host, so the host can send ping requests. However, **UFW on target devices must allow incoming ICMP** for ping-based detection to work.
+
+To allow ICMP (ping) through UFW on a target device:
+```console
+sudo ufw allow in proto icmp
+```
+
+#### MagicMirror Web Interface
+
+MagicMirror runs on **port 8080** by default. If you need to access the MagicMirror interface from other hosts on your network, open port 8080 on the MagicMirror host:
+```console
+sudo ufw allow 8080/tcp
+```
+
+If you have configured MagicMirror to use HTTPS or a different port, adjust the rule accordingly. For example, for port 443:
+```console
+sudo ufw allow 443/tcp
+```
+
+#### Summary of UFW Rules
+
+| Protocol | Port/Type | Direction | Host | Required |
+| --- | --- | --- | --- | --- |
+| ARP | N/A (Layer 2) | N/A | MagicMirror host | No — UFW does not affect ARP |
+| ICMP | echo-request | Outbound | MagicMirror host | Allowed by UFW default policy |
+| ICMP | echo-reply | Inbound | Target devices | Yes, if UFW is enabled on targets |
+| TCP | 8080 | Inbound | MagicMirror host | Yes, if remote browser access is needed |
+
+To verify the current UFW status and rules on the MagicMirror host:
+```console
+sudo ufw status verbose
 ```
 
 ## TelegramBot integration
